@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ronit Godambe — Web Developer</title>
+
+    <meta name="description"
+          content="Portfolio of Ronit Godambe — Web Developer specializing in modern, responsive and professional websites.">
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080808;
+            color: #f5f5f5;
+            font-family: "Inter", sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =========================
+           VARIABLES
+        ========================== */
+
+        :root {
+            --bg: #080808;
+            --card: #101010;
+            --border: #242424;
+            --text: #f5f5f5;
+            --muted: #999;
+            --max-width: 1150px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            z-index: 1000;
+
+            background: rgba(8, 8, 8, 0.75);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: auto;
+
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 58px;
+            height: 58px;
+
+            object-fit: contain;
+
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #aaa;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+            overflow: hidden;
+
+            padding: 120px 20px 60px;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 650px;
+            height: 650px;
+
+            background: radial-gradient(
+                circle,
+                rgba(255,255,255,0.08),
+                transparent 70%
+            );
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-photo {
+            width: 250px;
+            height: 250px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            margin: 0 auto 38px;
+
+            border: 1px solid #333;
+
+            box-shadow:
+                0 0 0 12px rgba(255,255,255,0.02),
+                0 0 80px rgba(255,255,255,0.10);
+        }
+
+        .hero h1 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: clamp(45px, 8vw, 90px);
+
+            line-height: 0.95;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #777;
+        }
+
+        .hero-role {
+            font-size: 18px;
+
+            color: #ddd;
+
+            margin-bottom: 12px;
+        }
+
+        .hero-description {
+            max-width: 600px;
+
+            margin: auto;
+
+            color: var(--muted);
+
+            font-size: 16px;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+
+            display: flex;
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 12px 22px;
+
+            border: 1px solid #333;
+
+            border-radius: 6px;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .button.primary {
+            background: white;
+            color: black;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+
+            border-color: #666;
+        }
+
+        .button.primary:hover {
+            background: #ddd;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+            max-width: var(--max-width);
+
+            margin: auto;
+
+            padding: 110px 25px;
+        }
+
+        .section-label {
+            color: #666;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            font-size: 11px;
+
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 42px;
+
+            letter-spacing: -1.5px;
+
+            margin-bottom: 50px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+        }
+
+        .about-text {
+            color: #aaa;
+
+            font-size: 16px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-info {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .info-box {
+            border-top: 1px solid var(--border);
+
+            padding-top: 15px;
+        }
+
+        .info-box strong {
+            display: block;
+
+            font-size: 13px;
+
+            color: #666;
+
+            margin-bottom: 5px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        .info-box span {
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .project {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+            padding: 30px;
+
+            transition: 0.35s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+
+            border-color: #444;
+        }
+
+        .project-number {
+            color: #555;
+
+            font-size: 12px;
+
+            margin-bottom: 35px;
+        }
+
+        .project h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 25px;
+
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #888;
+
+            font-size: 14px;
+
+            margin-bottom: 25px;
+        }
+
+        .project-tech {
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+        }
+
+        .tech {
+            border: 1px solid #292929;
+
+            padding: 5px 9px;
+
+            border-radius: 4px;
+
+            color: #888;
+
+            font-size: 11px;
+        }
+
+        .project-link {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            font-size: 13px;
+
+            border-bottom: 1px solid #555;
+
+            padding-bottom: 3px;
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================== */
+
+        .services {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .service {
+            padding: 30px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+        }
+
+        .service-number {
+            color: #555;
+
+            font-size: 12px;
+
+            margin-bottom: 35px;
+        }
+
+        .service h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+        }
+
+        .service p {
+            color: #888;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            border-top: 1px solid var(--border);
+
+            border-left: 1px solid var(--border);
+        }
+
+        .skill {
+            padding: 25px;
+
+            border-right: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+
+            color: #bbb;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================== */
+
+        .timeline {
+            border-left: 1px solid #292929;
+
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            left: -34px;
+
+            top: 8px;
+        }
+
+        .timeline-date {
+            color: #666;
+
+            font-size: 12px;
+
+            margin-bottom: 8px;
+        }
+
+        .timeline h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 22px;
+
+            margin-bottom: 5px;
+        }
+
+        .timeline p {
+            color: #888;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact {
+            text-align: center;
+
+            padding-bottom: 150px;
+        }
+
+        .contact h2 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: clamp(40px, 7vw, 75px);
+
+            letter-spacing: -3px;
+
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            color: #888;
+
+            margin-bottom: 30px;
+        }
+
+        .contact-email {
+            font-size: 18px;
+
+            border-bottom: 1px solid #555;
+
+            padding-bottom: 5px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            border-top: 1px solid #1d1d1d;
+
+            padding: 25px;
+
+            text-align: center;
+
+            color: #555;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .nav-container {
+                height: 70px;
+
+                padding: 0 18px;
+            }
+
+            .logo img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .profile-photo {
+                width: 190px;
+                height: 190px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .about-info {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+
+        <div class="nav-container">
+
+            <a href="#" class="logo">
+
+                <img
+                    src="img/favicon.png"
+                    alt="RG Logo"
+                >
+
+            </a>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#services">Services</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <img
+                src="img/ronit.png"
+                alt="Ronit Godambe"
+                class="profile-photo"
+            >
+
+
+            <h1>
+                Ronit<br>
+                <span>Godambe.</span>
+            </h1>
+
+
+            <p class="hero-role">
+                Web Developer
+            </p>
+
+
+            <p class="hero-description">
+                I design and develop clean, responsive and professional
+                websites for businesses, brands and individuals.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#projects"
+                    class="button primary"
+                >
+                    View Projects
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="button"
+                >
+                    Get in Touch
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+        <div class="section-label">
+            01 — About
+        </div>
+
+
+        <h2 class="section-title">
+            Building for the web.
+        </h2>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I'm Ronit Godambe, a web developer focused on creating
+                    modern, responsive and professional websites.
+                </p>
+
+
+                <p>
+                    I work with businesses and individuals to turn ideas
+                    into clean, functional websites that look good across
+                    desktops, tablets and mobile devices.
+                </p>
+
+
+                <p>
+                    Alongside web development, I'm a Computer Engineering
+                    student continuously expanding my technical skills
+                    and exploring new technologies.
+                </p>
+
+            </div>
+
+
+            <div class="about-info">
+
+                <div class="info-box">
+
+                    <strong>
+                        Specialization
+                    </strong>
+
+                    <span>
+                        Static Websites
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>
+                        Focus
+                    </strong>
+
+                    <span>
+                        Design & Development
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>
+                        Based In
+                    </strong>
+
+                    <span>
+                        Pune, India
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>
+                        Availability
+                    </strong>
+
+                    <span>
+                        Open to Projects
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+        <div class="section-label">
+            02 — Selected Work
+        </div>
+
+
+        <h2 class="section-title">
+            Things I've built.
+        </h2>
+
+
+        <div class="projects">
+
+
+            <!-- PROJECT 01 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    PROJECT / 01
+                </div>
+
+
+                <h3>
+                    Lokdham Developers
+                </h3>
+
+
+                <p>
+                    A professional real-estate website designed to
+                    showcase development projects, available properties
+                    and company information.
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span class="tech">
+                        HTML
+                    </span>
+
+                    <span class="tech">
+                        CSS
+                    </span>
+
+                    <span class="tech">
+                        JavaScript
+                    </span>
+
+                    <span class="tech">
+                        Supabase
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="project-link"
+                >
+                    View Project →
+                </a>
+
+            </article>
+
+
+
+            <!-- PROJECT 02 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    PROJECT / 02
+                </div>
+
+
+                <h3>
+                    Rvedi — Redesigning
+                </h3>
+
+
+                <p>
+                    A premium visual redesign of the Rvedi website,
+                    focused on refined layouts, typography, visual
+                    hierarchy and a polished responsive experience.
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span class="tech">
+                        HTML
+                    </span>
+
+                    <span class="tech">
+                        CSS
+                    </span>
+
+                    <span class="tech">
+                        JavaScript
+                    </span>
+
+                    <span class="tech">
+                        Responsive Design
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="project-link"
+                >
+                    View Project →
+                </a>
+
+            </article>
+
+
+
+            <!-- PROJECT 03 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    PROJECT / 03
+                </div>
+
+
+                <h3>
+                    Zomato Clone
+                </h3>
+
+
+                <p>
+                    A front-end clone of the Zomato landing page built
+                    with HTML and CSS, featuring a responsive hero
+                    section, image-to-video transitions, image cards,
+                    hover animations and smooth scrolling.
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span class="tech">
+                        HTML5
+                    </span>
+
+                    <span class="tech">
+                        CSS3
+                    </span>
+
+                    <span class="tech">
+                        Responsive Design
+                    </span>
+
+                    <span class="tech">
+                        Animations
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="project-link"
+                >
+                    View Project →
+                </a>
+
+            </article>
+
+
+
+            <!-- PROJECT 04 -->
+
+            <!-- <article class="project">
+
+                <div class="project-number">
+                    PROJECT / 04
+                </div>
+
+
+                <h3>
+                    Project Name
+                </h3>
+
+
+                <p>
+                    Showcase another website or development project
+                    here when you have something ready to add.
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span class="tech">
+                        Technology
+                    </span>
+
+                    <span class="tech">
+                        Technology
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="project-link"
+                >
+                    View Project →
+                </a>
+
+            </article> -->
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section id="services">
+
+        <div class="section-label">
+            03 — Services
+        </div>
+
+
+        <h2 class="section-title">
+            What I can build.
+        </h2>
+
+
+        <div class="services">
+
+
+            <div class="service">
+
+                <div class="service-number">
+                    01
+                </div>
+
+
+                <h3>
+                    Business Websites
+                </h3>
+
+
+                <p>
+                    Professional websites designed to establish
+                    an online presence and present your business
+                    clearly to potential customers.
+                </p>
+
+            </div>
+
+
+
+            <div class="service">
+
+                <div class="service-number">
+                    02
+                </div>
+
+
+                <h3>
+                    Landing Pages
+                </h3>
+
+
+                <p>
+                    Focused, responsive landing pages designed
+                    around a product, service, campaign or idea.
+                </p>
+
+            </div>
+
+
+
+            <div class="service">
+
+                <div class="service-number">
+                    03
+                </div>
+
+
+                <h3>
+                    Portfolio Websites
+                </h3>
+
+
+                <p>
+                    Personal and professional portfolio websites
+                    that showcase work, skills, experience and
+                    achievements.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+        <div class="section-label">
+            04 — Skills
+        </div>
+
+
+        <h2 class="section-title">
+            Tools & technologies.
+        </h2>
+
+
+        <div class="skills">
+
+            <div class="skill">
+                HTML5
+            </div>
+
+            <div class="skill">
+                CSS3
+            </div>
+
+            <div class="skill">
+                JavaScript
+            </div>
+
+            <div class="skill">
+                Responsive Design
+            </div>
+
+            <div class="skill">
+                Git
+            </div>
+
+            <div class="skill">
+                GitHub
+            </div>
+
+            <div class="skill">
+                Supabase
+            </div>
+
+            <div class="skill">
+                UI Design
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
+
+    <section id="experience">
+
+        <div class="section-label">
+            05 — Experience
+        </div>
+
+
+        <h2 class="section-title">
+            What I'm working on.
+        </h2>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    PRESENT
+                </div>
+
+
+                <h3>
+                    Independent Web Developer
+                </h3>
+
+
+                <p>
+                    Designing and developing responsive websites
+                    for businesses and individuals, with a focus
+                    on clean interfaces, usability and performance.
+                </p>
+
+            </div>
+
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    ONGOING
+                </div>
+
+
+                <h3>
+                    Web Development
+                </h3>
+
+
+                <p>
+                    Continuously developing projects to strengthen
+                    frontend development, design and programming
+                    skills.
+                </p>
+
+            </div>
+
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    ONGOING
+                </div>
+
+
+                <h3>
+                    Computer Engineering
+                </h3>
+
+
+                <p>
+                    Developing a strong technical foundation through
+                    Computer Engineering studies alongside practical
+                    software development.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact" class="contact">
+
+        <div class="section-label">
+            06 — Contact
+        </div>
+
+
+        <h2>
+            Let's build something.
+        </h2>
+
+
+        <p>
+            Have a project, idea or website in mind?
+        </p>
+
+
+        <a
+            href="tel:+918888219219"
+            class="contact-email"
+        >
+            +91 88882 19219
+        </a>
+
+
+        <br><br>
+
+
+        <a
+            href="mailto:your@email.com"
+            class="contact-email"
+        >
+            your@email.com
+        </a>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        © 2026 Ronit Godambe. All rights reserved.
+
+    </footer>
+
+
+</body>
+</html>
