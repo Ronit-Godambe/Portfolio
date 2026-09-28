@@ -205,7 +205,7 @@
             margin-bottom: 25px;
         }
 
-        .hero h1 span {
+        .hero h1 #typing-name {
             color: #777;
         }
 
@@ -688,6 +688,20 @@
 
         }
 
+        .cursor {
+    color: #777;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%, 100% {
+        opacity: 0;
+    }
+}
     </style>
 </head>
 
@@ -758,10 +772,9 @@
             >
 
 
-            <h1>
-                Ronit<br>
-                <span>Godambe.</span>
-            </h1>
+           <h1>
+    <span id="typing-name"></span><span class="cursor">|</span>
+</h1>
 
 
             <p class="hero-role">
@@ -1433,6 +1446,29 @@
 
     </footer>
 
+<script>
 
+    const name = "Ronit Godambe";
+    const typingName = document.getElementById("typing-name");
+
+    let index = 0;
+
+    function typeName() {
+
+        if (index < name.length) {
+
+            typingName.textContent += name.charAt(index);
+
+            index++;
+
+            setTimeout(typeName, 120);
+
+        }
+
+    }
+
+    typeName();
+
+</script>
 </body>
 </html>
