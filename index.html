@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,18 @@
     <title>Ronit Godambe — Web Developer</title>
 
     <meta name="description"
-          content="Portfolio of Ronit Godambe — Web Developer specializing in modern, responsive and professional websites.">
+        content="Portfolio of Ronit Godambe — Web Developer specializing in modern, responsive and professional websites.">
 
     <link rel="icon" type="image/png" href="img/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <style>
-
         /* =========================
            RESET
         ========================== */
@@ -85,7 +86,7 @@
             background: rgba(8, 8, 8, 0.75);
             backdrop-filter: blur(15px);
 
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .nav-container {
@@ -162,11 +163,9 @@
             width: 650px;
             height: 650px;
 
-            background: radial-gradient(
-                circle,
-                rgba(255,255,255,0.08),
-                transparent 70%
-            );
+            background: radial-gradient(circle,
+                    rgba(255, 255, 255, 0.08),
+                    transparent 70%);
 
             top: 50%;
             left: 50%;
@@ -175,90 +174,6 @@
 
             pointer-events: none;
         }
-
-
- 
-/* =========================
-   ANIMATED CAPSULE BACKGROUND
-========================== */
-
-.capsule-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    overflow: hidden;
-    pointer-events: none;
-    opacity: 0.8;
-
-    mask-image: linear-gradient(
-        to bottom,
-        transparent,
-        black 15%,
-        black 85%,
-        transparent
-    );
-}
-
-.capsule-bg svg {
-    position: absolute;
-    width: 130%;
-    height: 120%;
-    left: -15%;
-    top: -10%;
-    overflow: visible;
-}
-
-.capsule-bg path {
-    fill: none;
-    stroke: url(#capsule-gradient);
-    stroke-width: 1.3;
-    stroke-linecap: round;
-    opacity: 0.35;
-
-    animation: capsule-move 12s ease-in-out infinite alternate;
-    transform-box: fill-box;
-    transform-origin: center;
-}
-
-.capsule-bg path:nth-child(2) {
-    animation-duration: 16s;
-    animation-delay: -3s;
-    opacity: 0.25;
-}
-
-.capsule-bg path:nth-child(3) {
-    animation-duration: 19s;
-    animation-delay: -6s;
-    opacity: 0.2;
-}
-
-.capsule-bg path:nth-child(4) {
-    animation-duration: 14s;
-    animation-delay: -2s;
-    opacity: 0.3;
-}
-
-@keyframes capsule-move {
-    0% {
-        transform: translate3d(-35px, -15px, 0) scale(1);
-    }
-
-    50% {
-        transform: translate3d(20px, 20px, 0) scale(1.04);
-    }
-
-    100% {
-        transform: translate3d(45px, -20px, 0) scale(1.08);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .capsule-bg path {
-        animation: none;
-    }
-}
-
-
 
         .hero-content {
             position: relative;
@@ -278,8 +193,8 @@
             border: 1px solid #333;
 
             box-shadow:
-                0 0 0 12px rgba(255,255,255,0.02),
-                0 0 80px rgba(255,255,255,0.10);
+                0 0 0 12px rgba(255, 255, 255, 0.02),
+                0 0 80px rgba(255, 255, 255, 0.10);
         }
 
         .hero h1 {
@@ -778,19 +693,22 @@
         }
 
         .cursor {
-    color: #777;
-    animation: blink 0.8s infinite;
-}
+            color: #777;
+            animation: blink 0.8s infinite;
+        }
 
-@keyframes blink {
-    0%, 50% {
-        opacity: 1;
-    }
+        @keyframes blink {
 
-    51%, 100% {
-        opacity: 0;
-    }
-}
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 
@@ -808,10 +726,7 @@
 
             <a href="#" class="logo">
 
-                <img
-                    src="img/favicon.png"
-                    alt="RG Logo"
-                >
+                <img src="img/favicon.png" alt="RG Logo">
 
             </a>
 
@@ -850,51 +765,16 @@
          HERO
     ========================== -->
 
-<header class="hero">
+    <header class="hero">
 
-    <!-- ANIMATED CAPSULE BACKGROUND -->
-    <div class="capsule-bg">
+        <div class="hero-content">
 
-        <svg viewBox="0 0 1440 900"
-             preserveAspectRatio="xMidYMid slice"
-             xmlns="http://www.w3.org/2000/svg">
-
-            <defs>
-                <linearGradient id="capsule-gradient"
-                    x1="0%" y1="0%" x2="100%" y2="100%">
-
-                    <stop offset="0%" stop-color="#444444"/>
-                    <stop offset="50%" stop-color="#aaaaaa"/>
-                    <stop offset="100%" stop-color="#333333"/>
-
-                </linearGradient>
-            </defs>
-
-            <path d="M-100 500 C200 100 400 900 750 450 S1200 100 1550 500"/>
-
-            <path d="M-100 600 C250 200 450 850 800 400 S1250 200 1550 600"/>
-
-            <path d="M-100 350 C200 750 500 50 850 450 S1250 750 1550 350"/>
-
-            <path d="M-100 700 C300 300 550 950 900 500 S1300 250 1550 700"/>
-
-        </svg>
-
-    </div>
-
-    <div class="hero-content">
+            <img src="img/ronit.png" alt="Ronit Godambe" class="profile-photo">
 
 
-            <img
-                src="img/ronit.png"
-                alt="Ronit Godambe"
-                class="profile-photo"
-            >
-
-
-           <h1>
-    <span id="typing-name"></span><span class="cursor">|</span>
-</h1>
+            <h1>
+                <span id="typing-name"></span><span class="cursor">|</span>
+            </h1>
 
 
             <p class="hero-role">
@@ -910,18 +790,12 @@
 
             <div class="hero-buttons">
 
-                <a
-                    href="#projects"
-                    class="button primary"
-                >
+                <a href="#projects" class="button primary">
                     View Projects
                 </a>
 
 
-                <a
-                    href="#contact"
-                    class="button"
-                >
+                <a href="#contact" class="button">
                     Get in Touch
                 </a>
 
@@ -1097,11 +971,7 @@
                 </div>
 
 
-                <a
-                    href="https://www.lokdham.com"
-                    class="project-link"
-                    target = "_blank"
-                >
+                <a href="https://www.lokdham.com" class="project-link" target="_blank">
                     View Project →
                 </a>
 
@@ -1151,11 +1021,7 @@
                 </div>
 
 
-                <a
-                    href="https://www.rvedi.com"
-                    class="project-link"
-                    target = "_blank"
-                >
+                <a href="https://www.rvedi.com" class="project-link" target="_blank">
                     View Project →
                 </a>
 
@@ -1206,11 +1072,7 @@
                 </div>
 
 
-                <a
-                    href="https://Ronit-Godambe.github.io/Zomato-Clone/"
-                    class="project-link"
-                    target = "_blank"
-                >
+                <a href="https://Ronit-Godambe.github.io/Zomato-Clone/" class="project-link" target="_blank">
                     View Project →
                 </a>
 
@@ -1523,10 +1385,7 @@
         </p>
 
 
-        <a
-            href="tel:+918888219219"
-            class="contact-email"
-        >
+        <a href="tel:+918888219219" class="contact-email">
             +91 88882 19219
         </a>
 
@@ -1534,23 +1393,15 @@
         <br><br>
 
 
-        <a
-            href="mailto:ronitgodambe@gmail.com"
-            class="contact-email"
-        >
+        <a href="mailto:ronitgodambe@gmail.com" class="contact-email">
             ronitgodambe@gmail.com
         </a>
 
         <br><br>
 
-    <a
-    href="https://github.com/Ronit-Godambe"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="contact-email"
-    >
-    GitHub
-    </a>
+        <a href="https://github.com/Ronit-Godambe" target="_blank" rel="noopener noreferrer" class="contact-email">
+            GitHub
+        </a>
 
     </section>
 
@@ -1566,29 +1417,30 @@
 
     </footer>
 
-<script>
+    <script>
 
-    const name = "Ronit Godambe.";
-    const typingName = document.getElementById("typing-name");
+        const name = "Ronit Godambe.";
+        const typingName = document.getElementById("typing-name");
 
-    let index = 0;
+        let index = 0;
 
-    function typeName() {
+        function typeName() {
 
-        if (index < name.length) {
+            if (index < name.length) {
 
-            typingName.textContent += name.charAt(index);
+                typingName.textContent += name.charAt(index);
 
-            index++;
+                index++;
 
-            setTimeout(typeName, 120);
+                setTimeout(typeName, 120);
+
+            }
 
         }
 
-    }
+        typeName();
 
-    typeName();
-
-</script>
+    </script>
 </body>
+
 </html>
