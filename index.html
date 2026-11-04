@@ -176,6 +176,78 @@
             pointer-events: none;
         }
 
+
+        
+/* =========================
+   ANIMATED CAPSULE BACKGROUND
+========================== */
+
+.capsule-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.75;
+
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 15%,
+        black 75%,
+        transparent 100%
+    );
+}
+
+.capsule-bg svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+}
+
+.capsule-bg path {
+    fill: none;
+    stroke: url(#capsule-gradient);
+    stroke-width: 1.2;
+    stroke-linecap: round;
+    opacity: 0.45;
+    stroke-dasharray: 900 300;
+    animation: capsule-flow 18s linear infinite;
+}
+
+.capsule-bg path:nth-child(2) {
+    animation-duration: 24s;
+    opacity: 0.3;
+}
+
+.capsule-bg path:nth-child(3) {
+    animation-duration: 30s;
+    opacity: 0.2;
+}
+
+.capsule-bg path:nth-child(4) {
+    animation-duration: 22s;
+    opacity: 0.25;
+}
+
+@keyframes capsule-flow {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: -1200;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .capsule-bg path {
+        animation: none;
+    }
+}
+
+
         .hero-content {
             position: relative;
             z-index: 2;
@@ -766,9 +838,40 @@
          HERO
     ========================== -->
 
-    <header class="hero">
+<header class="hero">
 
-        <div class="hero-content">
+    <!-- ANIMATED CAPSULE BACKGROUND -->
+    <div class="capsule-bg">
+
+        <svg viewBox="0 0 1440 900"
+             preserveAspectRatio="xMidYMid slice"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <defs>
+                <linearGradient id="capsule-gradient"
+                    x1="0%" y1="0%" x2="100%" y2="100%">
+
+                    <stop offset="0%" stop-color="#444444"/>
+                    <stop offset="50%" stop-color="#aaaaaa"/>
+                    <stop offset="100%" stop-color="#333333"/>
+
+                </linearGradient>
+            </defs>
+
+            <path d="M-100 500 C200 100 400 900 750 450 S1200 100 1550 500"/>
+
+            <path d="M-100 600 C250 200 450 850 800 400 S1250 200 1550 600"/>
+
+            <path d="M-100 350 C200 750 500 50 850 450 S1250 750 1550 350"/>
+
+            <path d="M-100 700 C300 300 550 950 900 500 S1300 250 1550 700"/>
+
+        </svg>
+
+    </div>
+
+    <div class="hero-content">
+
 
             <img
                 src="img/ronit.png"
